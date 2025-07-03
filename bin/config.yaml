@@ -1,0 +1,42 @@
+# -------------------------------------------------------------------
+# Rare‐disease runs configuration
+# -------------------------------------------------------------------
+
+# 1. How many RD runs to perform (must match the length of params_RD)
+n: 1
+
+# 2. Map run‐index → ORPHA code
+params_RD:
+  1: ORPHA:610
+
+# 3. Which “combine” functions to try (both mp and mm will loop over these)
+combine:
+  - funSimMax
+  - funSimAvg
+  - BMA
+  - rsd
+
+# 4. Semantic‐measure methods
+methods:
+  - resnik
+  - lin
+  - jc
+  - rel
+
+# 5. Frequency‐weight options
+freq_opts:
+  - y
+  - n
+
+# 6. The single product4 dataset label (your “pd4” argument)
+pd4: all_product4_mai_2025
+
+# 7. All the vector‐weight strings to iterate over
+vector_strs:
+  - 0.99_0.77_0.65_0.63_0.94
+  - 1.00_0.50_0.50_0.50_0.50
+
+# 8/9. Where to write outputs for each mode
+#    These should match your PATH_OUTPUT_SM / PATH_OUTPUT_MM in path_variable.py
+output_base_mp: /absolute/or/relative/path/to/semantic_measures/patient_to_rd
+output_base_mm: /absolute/or/relative/path/to/semantic_measures/rd_to_rd

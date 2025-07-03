@@ -1,111 +1,61 @@
-from bin.set_log import * 
-from bin.classes.sim_measure_cal import *
-
+from set_log import * 
+from classes.sim_measure_cal import Sim_measure
+from path_variable import (
+    PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER_WITH_ONTOLOGYX,
+    PATH_OUTPUT_SM,
+    PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,
+)
+from sim_common import (add_common_args,parse_vector_weights,make_output_dir)
  
-if __name__ == "__main__":
+def run_for_rd(sim,index,rd,patients,patients_rds,combine,method,is_freq,weights,out_dir):
+    """Compute SM table and CDF (if applicable), export both as Excel."""
+    rd_file = rd.replace(":", "-")
+    df_sm = sim.run_sm_freq(rd, patients, combine, method, is_freq, weights)
 
-    #logger.info(f"#####################   START 1_make_ra")
+    sm_path =  f"{out_dir}/{index}_{rd_file}.xlsx"
+    sim.export_sm(df_sm, sm_path)
+    print("Exported SM to %s", sm_path)
 
-    ############################################################
-    #####                        Arg                       #####
-    ############################################################
-
-    index = sys.argv[1]  # 1 Unique identifier
-    param_RD = sys.argv[2]  # "ORPHA:61" non constant parameter
-    combine = sys.argv[3]
-    method = sys.argv[4]
-    is_freq = sys.argv[5] 
-    pd4=sys.argv[6]
-    vector_str = sys.argv[7]
-
-
-        
-    #######################################################################
-
-    # index = 1 # 1 Unique identifier
-    # param_RD = "ORPHA:610"  ##"ORPHA:61"  
-    # combine = "funSimAvg" #funSimMax funSimAvg  BMA
-    # method = "resnik"
-    # is_freq = 'n'
-    # pd4 = "all_product4_mai_2025"
-    # vector_str = '0.99_0.77_0.65_0.63_0.94'
-
-
-    vector_weight = [float(x)for x in vector_str.split('_')]
-    param_RD_file = param_RD.replace(':',"-")
-
-
-    # ################################################
-
-
-    concat_config = f"{index}_{param_RD}"
-
-    logger.info(f"{index}\t{param_RD}\t{combine}\t{method}\t{is_freq}\t{pd4}\t{vector_str}\t Folder name {concat_config}")
-
-
-    out_dir = os.path.join(PATH_OUTPUT_SM, combine, method, is_freq, pd4, vector_str)
-    os.makedirs(out_dir, exist_ok=True)
-
-
-
-    ############################################################
-    #####                     Load df                     #####
-    ###########################################################
-
-    ## Patients 
-    # PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER_WITH_ONTOLOGYX 
-    # PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER
-    df_patient = pd.read_excel(PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER_WITH_ONTOLOGYX,index_col=0)
-    # df_patient = df_patient[df_patient['phenopacket'] == 'P0001068']  #P0001068 
-
-    patients_id_list = df_patient["phenopacket"].drop_duplicates().tolist()    
-    patients_rds_list = df_patient["Disease"].drop_duplicates().tolist()    
-    #print(f"run_mp_cdf: Nb patients : {len(patients_id_list)}")
-
-    ## Diseases
-    df_raredisease = pd.read_excel(PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,index_col =0) 
-    # df_raredisease = df_raredisease[df_raredisease['ORPHAcode'] == param_RD]  # 610   166024
-
-    ############################################################
-    #####                     Load sm                     #####
-    ###########################################################
-    ## Build df sm 
-    sim_measure = Sim_measure(df_patient,df_raredisease,'phenopacket','ORPHAcode')
-
-
-    ############################################################
-    #####               Load Rare Diseases                 #####
-    ###########################################################
-
-
-
-    if  param_RD in df_raredisease['ORPHAcode'].tolist():    
-        df_sm_no_dict = sim_measure.run_sm_freq(param_RD,patients_id_list,combine,method,is_freq,vector_weight)    
-        path_sm = os.path.join(out_dir, f"{index}_{param_RD_file}.xlsx")
-
-        sim_measure.export_sm(df_sm_no_dict,path_sm)
-        #logger.info(f"{index}\t{param_RD}\t{combine}\t{method}\t{is_freq}\t{vector_str}\t Export df ")
-        # ############################################################
-        # #####                     CDF                          #####
-        # ###########################################################
-        path_cdf = os.path.join(out_dir, f"CDF_{index}_{param_RD_file}.xlsx")
-        if param_RD in patients_rds_list:
-            df_cdf = sim_measure.from_sm_make_cdf(df_sm_no_dict)
-            ## Export cdf
-            #logger.info(f"{index}\t{param_RD}\t{combine}\t{method}\t{is_freq}\t{vector_str}\t CDF Export df ")
-
-        else:
-            df_cdf = pd.DataFrame(columns=["patients","RDs"], index=range(1))
-            #logger.info(f"{index}\t{param_RD}\t{combine}\t{method}\t{is_freq}\t{vector_str}\t CDF Empty df export") 
-        sim_measure.export_sm(df_cdf,path_cdf)
-
+    # CDF only if this RD occurs in patient list
+    if rd in patients_rds:
+        df_cdf = sim.from_sm_make_cdf(df_sm,"Disease")
     else:
-        df_empty = pd.DataFrame(columns=['RDs','patients','score'], index=range(1))
-        path_empty = os.path.join(out_dir, f"{index}_{param_RD_file}.xlsx")
-        sim_measure.export_sm(df_empty, path_empty)
+        df_cdf = pd.DataFrame(columns=["patients","RDs"], index=[0])
 
+    cdf_path =  f"{out_dir}/CDF_{index}_{rd_file}.xlsx"
+    sim.export_sm(df_cdf, cdf_path)
+    print("Exported CDF to %s", cdf_path)
 
+def lauch_mp():
+    args = add_common_args()
 
-    #print("run_mp_cdf: END.\n")
+    print("Parameters: %s", args)
 
-    #logger.info(f"#####################   END 1_make_ra")
+    # prepare
+    weights     = parse_vector_weights(args.vector_str)
+    out_dir     = make_output_dir(PATH_OUTPUT_SM,args.combine, args.method, args.is_freq, args.pd4, args.vector_str)
+ 
+    df_patient = pd.read_excel(PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER_WITH_ONTOLOGYX, index_col=0    )
+    df_raredisease  = pd.read_excel(PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD, index_col=0    )
+
+    patients_ids = df_patient["phenopacket"].drop_duplicates().tolist()
+    patients_rds = set(df_patient["Disease"].drop_duplicates().tolist())
+
+    sim = Sim_measure(
+        df_patient, df_raredisease,"phenopacket", "ORPHAcode"  )
+
+    if args.param_rd not in df_raredisease["ORPHAcode"].tolist():
+        # no matches → export empty
+        print("RD %s not in dataset; exporting empty result", args.param_rd)
+        sim.export_sm(
+            pd.DataFrame(columns=["RDs","patients","score"], index=[0]),
+              f"{out_dir}/{args.index}_{args.param_rd.replace(':','-')}.xlsx"
+        )
+    else:
+        run_for_rd(
+            sim, args.index, args.param_rd, patients_ids, patients_rds,
+            args.combine, args.method, args.is_freq, weights, out_dir
+        )
+
+if __name__ == "__main__":
+    lauch_mp()

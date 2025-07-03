@@ -1,4 +1,4 @@
-from bin.get_packages import * 
+from get_packages import * 
 import xmltodict
 
  
@@ -14,12 +14,12 @@ class DataGenerate():
             return json.load(f)
 
 
-    def save_json(self,file_name, data_dict):
+    def save_json(self,file_name, data_dict):  # i use this
         """Save a dictionary as a JSON file."""
         with open(os.path.join(self.output_path, file_name), 'w') as output_file:
             json.dump(data_dict, output_file)
 
-    def from_xml_to_json(self):
+    def from_xml_to_json(self): # i use this
 
         with open(self.input_path ,encoding="ISO-8859-1") as pd_xml:  
             root  = xmltodict.parse(pd_xml.read())

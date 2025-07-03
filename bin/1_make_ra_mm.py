@@ -1,103 +1,69 @@
-from bin.set_log import * 
-from bin.classes.sim_measure_cal import *
+from set_log import * 
+from classes.sim_measure_cal import Sim_measure
+from path_variable import (
+    PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,
+    PATH_OUTPUT_MM,
+    PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,
+)
+from sim_common import (add_common_args,parse_vector_weights,make_output_dir)
 
- 
-if __name__ == "__main__":
+def run_for_rd(sim, index, rd, rd_id_list_2, combine, method, is_freq, weights, out_dir):
+    """
+    Compute similarity-measure table and CDF, then export both as Excel.
+    """
+    rd_file = rd.replace(":", "-")
 
-    #logger.info(f"#####################   START 1_make_ra")
+    # 1. Compute & export SM
+    df_sm = sim.run_mm_freq(rd, rd_id_list_2, combine, method, is_freq, weights)
+    df_sm.rename({'patients':'OC2','RDs':'OC1'}, axis='columns',inplace=True)
 
-    ############################################################
-    #####                        Arg                       #####
-    ############################################################
-
-    index = sys.argv[1]  # 1 Unique identifier
-    param_RD = sys.argv[2]  # "ORPHA:61" non constant parameter
-    combine = sys.argv[3]
-    method = sys.argv[4]
-    is_freq = sys.argv[5] 
-    pd4=sys.argv[6]
-    vector_str = sys.argv[7]
-
-
-        
-    #######################################################################
-
-    # index = 1 # 1 Unique identifier
-    # param_RD = "ORPHA:610"  ##"ORPHA:61"  
-    # combine = "rsd" #funSimMax funSimAvg  BMA
-    # method = "resnik"
-    # is_freq = 'n'
-    # pd4 = "productmai2024_all_vectors_withontologyX"
-    # vector_str = '3_2_2_2_1'
-    #######################################################################
-
-    vector_weight = [float(x)for x in vector_str.split('_')]
-    param_RD_file = param_RD.replace(':',"-")
+    sm_path = f"{out_dir}/{index}_{rd_file}.xlsx"
+    sim.export_sm(df_sm, sm_path)
+    print(f"Exported SM to {sm_path}")
 
 
-    # ################################################
+def launch_mp():
+    args = add_common_args()
+    print(f"Parameters: {args}")
 
+    # 1. Parse weights & prepare output directory
+    weights = parse_vector_weights(args.vector_str)
+    out_dir = make_output_dir(PATH_OUTPUT_MM,args.combine,args.method,args.is_freq,
+        args.pd4,args.vector_str)
 
-    concat_config = f"{index}_{param_RD}"
-
-    logger.info(f"{concat_config}\t{combine}\t{method}\t{is_freq}\t{pd4}\t{vector_str}\t Folder name {concat_config}")
-
-
-    out_dir = os.path.join(PATH_OUTPUT_MM, combine, method, is_freq, pd4, vector_str)
-    os.makedirs(out_dir, exist_ok=True)
-
-    path_sm = os.path.join(out_dir, f"{index}_{param_RD_file}.xlsx")
-
-    # if param_RD_file in path_sm:
-    #     print("patient already done")
-    #     exit(0)
-    # else:
-    #     print('patient starting')
-
-
-    ############################################################
-    #####                     Load df                     #####
-    ###########################################################
-
-    ## Patients 
-    # PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER_WITH_ONTOLOGYX 
-    # PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER
+    # 2. Load dataframes
     df_raredisease_2 = pd.read_excel(PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,index_col =0) 
-    # df_raredisease_2 = df_raredisease_2[df_raredisease_2['ORPHAcode'] == 'ORPHA:166024']  # 610   166024
     rd_id_list_2 = df_raredisease_2['ORPHAcode'].drop_duplicates().tolist()
 
- 
-    ## Diseases
     df_raredisease = pd.read_excel(PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,index_col =0) 
-    df_raredisease = df_raredisease[df_raredisease['ORPHAcode'] == param_RD]  # 610   166024
+    # df_raredisease = df_raredisease[df_raredisease['ORPHAcode'] ==" ORPHA:610"]  # 610   166024
     rd_id_list = df_raredisease['ORPHAcode'].drop_duplicates().tolist()
-    ############################################################
-    #####                     Load sm                     #####
-    ###########################################################
-    ## Build df sm 
-    sim_measure = Sim_measure(df_raredisease_2,df_raredisease,'ORPHAcode','ORPHAcode')
 
+ 
+    # 4. Initialize similarity engine
+    sim = Sim_measure(df_raredisease_2,df_raredisease,"ORPHAcode","ORPHAcode")
 
-    ############################################################
-    #####               Load Rare Diseases                 #####
-    ###########################################################
-    #list_rd=  ['ORPHA:610','ORPHA:166024']
-    # rd_id_list_2.extend(rd_id_list)
-    if  param_RD in rd_id_list_2:    
-        df_sm_no_dict = sim_measure.run_mm_freq(param_RD,rd_id_list_2,combine,method,is_freq,vector_weight)    
-
-        df_sm_no_dict.rename({'patients':'OC2','RDs':'OC1'}, axis='columns',inplace=True)
-        sim_measure.export_sm(df_sm_no_dict,path_sm)
-
-
-
+    # 5. Run (or export empty if RD not in dataset)
+    if args.param_rd not in df_raredisease_2["ORPHAcode"].tolist():
+        empty_df = pd.DataFrame(columns=["RDs", "patients", "score"], index=[0])
+        empty_path = f"{out_dir}/{args.index}_{args.param_rd.replace(':','-')}.xlsx"
+        sim.export_sm(empty_df, empty_path)
+        print(f"RD {args.param_rd} not in dataset; exported empty to {empty_path}")
     else:
-        df_empty = pd.DataFrame(columns=['OC1','OC2','score'], index=range(1))
-        sim_measure.export_sm(df_empty, path_sm)
-        print(f"empty df sm")
+        run_for_rd(
+            sim,
+            args.index,
+            args.param_rd,
+            rd_id_list_2,
+            rd_id_list,
+            args.combine,
+            args.method,
+            args.is_freq,
+            weights,
+            out_dir
+        )
 
 
 
-    #print("run_mp_cdf: END.\n")
-
-    #logger.info(f"#####################   END 1_make_ra")
+if __name__ == "__main__":
+    launch_mp()

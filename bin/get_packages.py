@@ -1,5 +1,5 @@
 
-from bin.path_variable import *
+from path_variable import PATH_INPUT_HPO
 
 import os 
 import time

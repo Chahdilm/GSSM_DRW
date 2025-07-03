@@ -1,6 +1,6 @@
-from bin.set_log import * 
+from set_log import * 
 
-
+ 
 
 class Sim_measure():
     def __init__(self,df_group1,df_group2,colname_1,colname_2):
@@ -374,9 +374,9 @@ class Sim_measure():
         df.to_excel(path_output )
 
 
-    def from_sm_make_cdf(self,df_sm):
+    def from_sm_make_cdf(self,df_sm,col_name):
         ## Filter the df patients
-        df_patient_confirmed = self.df_group1[[self.colname_1,COL_DF_PATIENT_ORPHACODE]] 
+        df_patient_confirmed = self.df_group1[[self.colname_1,col_name]]  # Disease pour col_name
         df_patient_confirmed.columns = ["patients","RDs"] 
         df_patient_confirmed = df_patient_confirmed.drop_duplicates()
         

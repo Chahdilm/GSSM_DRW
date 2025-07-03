@@ -1,5 +1,5 @@
 import os 
-from bin.config_json import CONFIG_RD,CONFIG_ALPHA
+from config_json import CONFIG_RD,CONFIG_ALPHA
 
 
 #CONFIG_ALPHA = "0.04"
@@ -9,7 +9,7 @@ CONFIG = CONFIG_RD + "_" + CONFIG_ALPHA
 
 
 #PATH_INIT  = "/my_pipeline/"
-PATH_INIT  = "/home/maroua/Bureau/wip/my_pipeline_v2/"
+PATH_INIT  = "../"
 PATH_OUTPUT = PATH_INIT + "output/"
 PATH_INPUT = PATH_INIT + "input/"
 
@@ -28,9 +28,9 @@ os.makedirs(PATH_LOG,exist_ok=True)
 ## folder where mp is stored 
 PATH_OUTPUT_SM = PATH_OUTPUT + "mp_sm/"
 PATH_OUTPUT_SM_CDF_FILE = PATH_OUTPUT_SM + f"CDF_{CONFIG}.xlsx"
+os.makedirs(PATH_OUTPUT_SM,exist_ok=True)
 
 PATH_OUTPUT_MM = PATH_OUTPUT + "mm_sm/"
-os.makedirs(PATH_OUTPUT_SM,exist_ok=True)
 os.makedirs(PATH_OUTPUT_MM,exist_ok=True)
 
 ## folder where the mm network is stored 

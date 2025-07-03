@@ -1,4 +1,4 @@
-from bin.classes.datagenerate import *
+from classes.datagenerate import *
 
 
 
@@ -233,7 +233,7 @@ class DataSet(DataGenerate):
 
 
 
-    def build_orpha_df(self):  
+    def build_orpha_df(self):   # i used this
         """ Build the df of orphacode and it s called in the call_build_df methods"""
         with open(self.input_path,'r') as file_phenopacket_result:
             root = json.load(file_phenopacket_result)

@@ -1,8 +1,13 @@
 
-from bin.get_packages import * 
+from get_packages import * 
 import sys
 import logging
+from path_variable import (
+    PATH_LOG_FILE,
+    PATH_LOG,
+    PATH_OUTPUT,
 
+)
 
 try:
     handler_info = logging.FileHandler(PATH_LOG_FILE, mode="a", encoding="utf-8")
