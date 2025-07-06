@@ -1,0 +1,8 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+MissingInputException in rule all in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 41:
+Missing input files for rule all:
+    affected files:
+        ../output/mp_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1_ORPHA-610.xlsx

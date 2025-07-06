@@ -1,0 +1,96 @@
+import yaml
+import os
+from path_variable import (PATH_OUTPUT_PRODUCT,PATH_OUTPUT_SM)
+from sim_common import (generate_weight_vec,build_base_dirs,select_vectors)
+
+ 
+
+# Capture CLI config (e.g. --config vector_str=1_1_0_0)
+workflow_cfg = globals().get("config", {})
+
+# Load RD mapping
+with open(PATH_OUTPUT_PRODUCT+"/RDs_all.yaml", "r") as f:
+    rd_config = yaml.safe_load(f)
+
+n = rd_config["n"]
+params_RD_dict = rd_config["param_RD"]
+
+# Workflow parameters
+combine = ['rsd'] # 'BUMS',"funSimAvg","BMA",'funSimMax'
+sm_method =["resnik"] # "graphic",'rel','ic','lin','jc'
+weight_flag = "n"
+product4 = "productmai2024_controvector_withontologyX"
+
+# Generate all vectors
+n_weights = 5
+
+ 
+vector_strs = []
+vector_strs = generate_weight_vec()
+
+
+
+selected_vectors = select_vectors(workflow_cfg, vector_strs, n_weights)
+input_files = []
+input_cdf_files = []
+for i, param_file, cmb, sm, vw, base in  build_base_dirs(PATH_OUTPUT_SM,params_RD_dict,n,combine,sm_method,selected_vectors,weight_flag,product4):
+    input_files.append(os.path.join(base, f"{i}_{param_file}.xlsx"))
+    input_cdf_files.append(os.path.join(base, f"CDF_{i}_{param_file}.xlsx"))
+
+
+rule all:
+    input:
+        input_cdf_files,
+        input_files,
+
+
+
+rule cleanup:
+    shell:
+        "rm -rf {PATH_OUTPUT_SM}"
+
+rule run_python_script:
+    output:
+        sm_xlsx = os.path.join(
+            str(PATH_OUTPUT_SM),
+            "{combine}",
+            "{sm}",
+            "{weight_flag}",
+            "{product4}",
+            "{vector_str}",
+            "{i}_{param_file}.xlsx"
+        ),
+        cdf_xlsx = os.path.join(
+            str(PATH_OUTPUT_SM),
+            "{combine}",
+            "{sm}",
+            "{weight_flag}",
+            "{product4}",
+            "{vector_str}",
+            "CDF_{i}_{param_file}.xlsx"
+        )
+    params:
+        params_RD = lambda wc: params_RD_dict[int(wc.i)]
+    wildcard_constraints:
+        i           = "[0-9]+",
+        combine     = "|".join(combine),
+        sm          = "|".join(sm_method),
+        weight_flag = weight_flag,
+        product4    = product4,
+        vector_str  = "|".join(selected_vectors),
+        param_file  = "[^/]+"
+    shell:
+        r"""
+        mkdir -p $(dirname {output.sm_xlsx})
+        python -m 1_make_ra \
+            {wildcards.i} \
+            {params.params_RD} \
+            {wildcards.combine} \
+            {wildcards.sm} \
+            {wildcards.weight_flag} \
+            {wildcards.product4} \
+            {wildcards.vector_str}
+        """
+
+
+ 

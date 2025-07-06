@@ -1,0 +1,42 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+run_python_script        1
+total                    2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Jul  3 21:42:16 2025]
+localrule run_python_script:
+    output: ../output/mp_sm/rsd/resnik/n/productmai2024_controvector_withontologyX/1_0_0_0_0/1_ORPHA-610.xlsx, ../output/mp_sm/rsd/resnik/n/productmai2024_controvector_withontologyX/1_0_0_0_0/CDF_1_ORPHA-610.xlsx
+    jobid: 1
+    reason: Missing output files: ../output/mp_sm/rsd/resnik/n/productmai2024_controvector_withontologyX/1_0_0_0_0/CDF_1_ORPHA-610.xlsx, ../output/mp_sm/rsd/resnik/n/productmai2024_controvector_withontologyX/1_0_0_0_0/1_ORPHA-610.xlsx
+    wildcards: combine=rsd, sm=resnik, weight_flag=n, product4=productmai2024_controvector_withontologyX, vector_str=1_0_0_0_0, i=1, param_file=ORPHA-610
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Thu Jul  3 21:42:21 2025]
+Finished jobid: 1 (Rule: run_python_script)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Jul  3 21:42:21 2025]
+localrule all:
+    input: ../output/mp_sm/rsd/resnik/n/productmai2024_controvector_withontologyX/1_0_0_0_0/CDF_1_ORPHA-610.xlsx, ../output/mp_sm/rsd/resnik/n/productmai2024_controvector_withontologyX/1_0_0_0_0/1_ORPHA-610.xlsx
+    jobid: 0
+    reason: Input files updated by another job: ../output/mp_sm/rsd/resnik/n/productmai2024_controvector_withontologyX/1_0_0_0_0/CDF_1_ORPHA-610.xlsx, ../output/mp_sm/rsd/resnik/n/productmai2024_controvector_withontologyX/1_0_0_0_0/1_ORPHA-610.xlsx
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Thu Jul  3 21:42:21 2025]
+Finished jobid: 0 (Rule: all)
+2 of 2 steps (100%) done
+Complete log(s): /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/.snakemake/log/2025-07-03T214216.531185.snakemake.log

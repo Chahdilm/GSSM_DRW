@@ -1,0 +1,45 @@
+configfile: "config.yaml"
+
+ 
+BASE_MP = config["output_base_mp"]
+BASE_MM = config["output_base_mm"]
+PD4     = config["pd4"]
+
+ 
+mp_targets = expand(
+f"{BASE_MP}/{{combine}}/{{method}}/{{is_freq}}/{PD4}/{{vector}}/{{idx}}_{{param}}.xlsx",
+combine=config["combine"],
+method=config["methods"],
+is_freq=config["freq_opts"],
+vector=config["vector_strs"],
+idx=list(range(1, config["n"] + 1)),
+param=[p.replace(':','-') for p in config["params_RD"].values()]
+)
+
+ 
+mm_targets = expand(
+f"{BASE_MM}/{{combine}}/{{method}}/{{is_freq}}/{PD4}/{{vector}}/{{idx}}_{{param}}.xlsx",
+combine=config["combine"],
+method=config["methods"],
+is_freq=config["freq_opts"],
+vector=config["vector_strs"],
+idx=list(range(1, config["n"] + 1)),
+param=[p.replace(':','-') for p in config["params_RD"].values()]
+)
+
+rule all:
+input:
+mp_targets + mm_targets
+
+rule run_mp:
+output:
+sm = f"{BASE_MP}/{{combine}}/{{method}}/{{is_freq}}/{PD4}/{{vector}}/{{idx}}{{param}}.xlsx",
+cdf= f"{BASE_MP}/{{combine}}/{{method}}/{{is_freq}}/{PD4}/{{vector}}/CDF{{idx}}_{{param}}.xlsx"
+shell:
+f"python bin/run_mp.py mp {{wildcards.idx}} {{wildcards.param}} {{wildcards.combine}} {{wildcards.method}} {{wildcards.is_freq}} {PD4} {{wildcards.vector}}"
+
+rule run_mm:
+output:
+sm = f"{BASE_MM}/{{combine}}/{{method}}/{{is_freq}}/{PD4}/{{vector}}/{{idx}}_{{param}}.xlsx"
+shell:
+f"python bin/run_mm.py mm {{wildcards.idx}} {{wildcards.param}} {{wildcards.combine}} {{wildcards.method}} {{wildcards.is_freq}} {PD4} {{wildcards.vector}}"
