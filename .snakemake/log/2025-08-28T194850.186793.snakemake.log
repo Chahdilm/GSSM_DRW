@@ -1,0 +1,135 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+run_python_script     4319
+total                 4320
+
+Select jobs to execute...
+Execute 2 jobs...
+[Thu Aug 28 19:48:51 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx
+    jobid: 1949
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx; Code has changed since last execution
+    wildcards: combine=rsd, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=3_2_2_2_1, i=1949, param_file=ORPHA-3082
+    resources: tmpdir=/tmp
+
+[Thu Aug 28 19:48:51 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/4238_ORPHA-99095.xlsx
+    jobid: 4238
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/4238_ORPHA-99095.xlsx
+    wildcards: combine=rsd, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=3_2_2_2_1, i=4238, param_file=ORPHA-99095
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+Select jobs to execute...
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 72:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx)
+        python -m bin.1_make_ra_mm \
+            1949 \
+            ORPHA:3082 \
+            rsd \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            3_2_2_2_1' returned non-zero exit status 1.
+[Thu Aug 28 19:48:53 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1949
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx)
+        python -m bin.1_make_ra_mm \
+            1949 \
+            ORPHA:3082 \
+            rsd \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            3_2_2_2_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 72:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/4238_ORPHA-99095.xlsx)
+        python -m bin.1_make_ra_mm \
+            4238 \
+            ORPHA:99095 \
+            rsd \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            3_2_2_2_1' returned non-zero exit status 1.
+[Thu Aug 28 19:48:53 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 4238
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/4238_ORPHA-99095.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/4238_ORPHA-99095.xlsx)
+        python -m bin.1_make_ra_mm \
+            4238 \
+            ORPHA:99095 \
+            rsd \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            3_2_2_2_1
+        
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Thu Aug 28 19:48:53 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1949
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx)
+        python -m bin.1_make_ra_mm \
+            1949 \
+            ORPHA:3082 \
+            rsd \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            3_2_2_2_1
+        
+        (command exited with non-zero exit code)
+[Thu Aug 28 19:48:53 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 4238
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/4238_ORPHA-99095.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/4238_ORPHA-99095.xlsx)
+        python -m bin.1_make_ra_mm \
+            4238 \
+            ORPHA:99095 \
+            rsd \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            3_2_2_2_1
+        
+        (command exited with non-zero exit code)
+Complete log(s): /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/.snakemake/log/2025-08-28T194850.186793.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,8 +1,8 @@
 
 
-from set_log import * 
-from path_variable import PATH_OUTPUT_SM, PATH_OUTPUT_MM
-from classes.concat_sm import ConcatSm
+from bin.set_log import * 
+from bin.path_variable import PATH_OUTPUT_SM, PATH_OUTPUT_MM
+from bin.classes.concat_sm import ConcatSm
 
 def concat_sm():
     p = argparse.ArgumentParser(description="MM/SM processing toolkit")

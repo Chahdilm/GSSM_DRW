@@ -1,11 +1,11 @@
 
-from bin.set_log import * 
+# from bin.set_log import * 
 
 print(f"START  12_get_match_group")
 t0 = time.perf_counter()
 
-# PATH_OUTPUT_COMPARE_GLOBAL = '/home/maroua/Bureau/wip/my_pipeline_v2/output//compare_rank_1_1_1_1_1_concat_matrix//global/'
-df = pd.read_excel(PATH_OUTPUT_COMPARE_GLOBAL + "/global_classif.xlsx",index_col=0)
+PATH_OUTPUT_COMPARE_GLOBAL = '/home/maroua/Bureau/wip/my_pipeline_v2/output//compare_rank_1_1_1_1_1_concat_matrix_0.3//global/'
+df_classif = pd.read_excel(PATH_OUTPUT_COMPARE_GLOBAL + "/global_classif.xlsx",index_col=0)
 
 # ─────── STEP 1: GROUP BY (patient, method) ───────
 #
@@ -23,10 +23,10 @@ df = pd.read_excel(PATH_OUTPUT_COMPARE_GLOBAL + "/global_classif.xlsx",index_col
 
 # df=df[df["type"] == 'P0001068']
 
-results = []  # we will append a row‐dict for every (patient,method,top10_rd_id)
-
+results = []  # we will append a row‐dict for every (patient,method,topN_rd_id)
+n_top = 20
 # iterate over each (patient,method)
-for (patient, mtd), sub in df.groupby(['type','method']):
+for (patient, mtd), sub in df_classif.groupby(['type','method']):
     # 1a) find the RDI row(s)
     is_rdi_sub = sub[sub['is_rdi'] == 'y']
     if is_rdi_sub.empty:
@@ -48,16 +48,16 @@ for (patient, mtd), sub in df.groupby(['type','method']):
     #    (a) take just ('rd_id','rank'), drop duplicates so each rd_id appears once
     #    (b) sort by ascending rank
     #    (c) pick the first 10 rd_id's
-    top10_rd = (
+    topN_rd = (
         sub[['rd_id','rank']]
         .drop_duplicates(subset=['rd_id'])
         .sort_values(by='rank', ascending=True)
-        .head(10)['rd_id']
+        .head(n_top)['rd_id']
         .tolist()
     )
 
     # 3) For each rd_id in the top 10, compute a “difference score” versus the RDI’s sets.
-    for candidate in top10_rd:
+    for candidate in topN_rd:
         cand_rows = sub[sub['rd_id'] == candidate]
         cand_classif_ids = set(cand_rows['classif_id'].unique())
         cand_group_ids   = set(cand_rows['group_id'].unique())
@@ -85,35 +85,35 @@ for (patient, mtd), sub in df.groupby(['type','method']):
 
         })
 
-
 # Turn our list of dicts into a DataFrame for easy viewing:
 summary_df = pd.DataFrame(results)
-#summary_df.to_excel('summary_df.xlsx')
+# summary_df.to_excel(PATH_OUTPUT_COMPARE_RSLT + 'summary_df.xlsx')
 
-# ─── 2) AGGREGATE OVERLAP COUNTS BY METHOD ───
-agg_df = summary_df.groupby("method")[["classif_overlap", "group_overlap"]].sum().reset_index()
 
-# ─── 3) PLOT A GROUPED BAR CHART ───
-methods = agg_df["method"].tolist()
-x = range(len(methods))
-width = 0.35
+# # ─── 3) PLOT A GROUPED BAR CHART ───
+# # aggregate AGGREGATE OVERLAP COUNTS BY METHOD ───
+# agg_df = summary_df.groupby("method")[["classif_overlap", "group_overlap"]].sum().reset_index()
 
-fig, ax = plt.subplots(figsize=(6, 4))
+# methods = agg_df["method"].tolist()
+# x = range(len(methods))
+# width = 0.35
 
-# Bar for total classif overlap
-ax.bar([i - width/2 for i in x], agg_df["classif_overlap"], width, label="Total classif overlap")
-# Bar for total group overlap
-ax.bar([i + width/2 for i in x], agg_df["group_overlap"], width, label="Total group overlap")
+# fig, ax = plt.subplots(figsize=(6, 4))
 
-ax.set_xticks(x)
-ax.set_xticklabels(methods)
-ax.set_ylabel("Sum of Overlap Counts")
-ax.set_title("Overlap with RDI by Method")
-ax.legend()
+# # Bar for total classif overlap
+# ax.bar([i - width/2 for i in x], agg_df["classif_overlap"], width, label="Total classif overlap")
+# # Bar for total group overlap
+# ax.bar([i + width/2 for i in x], agg_df["group_overlap"], width, label="Total group overlap")
 
-plt.tight_layout()
-plt.savefig(f"{PATH_OUTPUT_COMPARE_RSLT}/sum_overlap_methos.png", dpi=300)
-# plt.show()
+# ax.set_xticks(x)
+# ax.set_xticklabels(methods)
+# ax.set_ylabel("Sum of Overlap Counts")
+# ax.set_title("Overlap with RDI by Method")
+# ax.legend()
+
+# plt.tight_layout()
+# plt.savefig(f"{PATH_OUTPUT_COMPARE_RSLT}/sum_overlap_methos.png", dpi=300)
+# # plt.show()
 
  
 
@@ -235,7 +235,7 @@ for key,value in dict_nbgroup.items():
     rarw =rarw + value[2]
  
 
-logger.info(f'The total number of RDs that belong to the same medical domain  is : RSD:{rsd}, RA: {ra}, RARW: {rarw}')
+print(f'The total number of RDs that belong to the same medical domain  is : RSD:{rsd}, RA: {ra}, RARW: {rarw}')
 
 result = {}                    
 for k, v in dict_nbgroup.items():    
@@ -290,35 +290,34 @@ patient_rsd_rarw    = comb_to_keys.get(('RSD','RARW'), [])
 patient_ra_rarw     = comb_to_keys.get(('RA','RARW'), [])
 patient_all_three   = comb_to_keys.get(('RSD','RA','RARW'), [])
 
-logger.info(f"RSD only:      {len(patient_rsd)}")
-logger.info(f"RA only:     {len(patient_ra)}")
-logger.info(f"RARW only:    {len(patient_rarw)}")
-logger.info(f"RSD + RA:    { len(patient_rsd_ra)}")
-logger.info(f"RSD + RARW:   {len(patient_rsd_rarw)}")
-logger.info(f"RA + RARW:   { len(patient_ra_rarw)}")
-logger.info(f"All three:  {  len(patient_all_three)}")
+print(f"RSD only:      {len(patient_rsd)}")
+print(f"RA only:     {len(patient_ra)}")
+print(f"RARW only:    {len(patient_rarw)}")
+print(f"RSD + RA:    { len(patient_rsd_ra)}")
+print(f"RSD + RARW:   {len(patient_rsd_rarw)}")
+print(f"RA + RARW:   { len(patient_ra_rarw)}")
+print(f"All three:  {  len(patient_all_three)}")
 
  
 
  
-wide_html.to_excel(PATH_OUTPUT_COMPARE_RSLT + "match_group_color.xlsx")
+# wide_html.to_excel(PATH_OUTPUT_COMPARE_RSLT + "match_group_color.xlsx")
 
-logger.info(f"END  12_get_match_group done in {time.perf_counter() - t0:.1f}s")
-logger.info(f"END  12_get_match_group done in {time.perf_counter() - t0:.1f}s")
+print(f"END  12_get_match_group done in {time.perf_counter() - t0:.1f}s")
+print(f"END  12_get_match_group done in {time.perf_counter() - t0:.1f}s")
 
 # ─── Convert to HTML with escape=False and display ───
-# from IPython.display import HTML
-# # wide_html_ff = wide_html[wide_html['patient'] == "P0005327"]
-# html_str = wide_html.to_html(escape=False)
-# display(HTML(html_str))
+from IPython.display import HTML
+# wide_html_ff = wide_html[wide_html['patient'] == "P0005327"]
+html_str = wide_html.to_html(escape=False)
+display(HTML(html_str))
  
 # wide_html_ff = wide_html[wide_html['patient'].isin(set(allp).difference(patientuniq))]
 # html_str = wide_html_ff.to_html(escape=False)
 # display(HTML(html_str))
 
-logger.info(f"END  12_get_match_group done in {time.perf_counter() - t0:.1f}s")
+print(f"END  12_get_match_group done in {time.perf_counter() - t0:.1f}s")
 print(f"END  12_get_match_group done in {time.perf_counter() - t0:.1f}s")
 
 
-
-
+#########################################

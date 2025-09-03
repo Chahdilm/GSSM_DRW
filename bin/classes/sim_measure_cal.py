@@ -1,4 +1,4 @@
-from set_log import * 
+from bin.set_log import * 
 
  
 

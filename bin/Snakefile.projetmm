@@ -1,28 +1,27 @@
 import yaml
-import os
-from path_variable import (PATH_OUTPUT_PRODUCT,PATH_OUTPUT_MM)
-from sim_common import (generate_weight_vec,build_base_dirs,select_vectors)
+
+from bin.path_variable import (PATH_OUTPUT_PRODUCT,PATH_OUTPUT_MM)
+from bin.sim_common import (generate_weight_vec,build_base_dirs,select_vectors)
 
 
  
-
-# Capture CLI config (e.g. --config vector_str=1_1_0_0)
+## Capture CLI config (e.g. --config vector_str=1_1_0_0)
 workflow_cfg = globals().get("config", {})
 
-# Load RD mapping
+## Load RD mapping
 with open(PATH_OUTPUT_PRODUCT+"/RDs_all.yaml", "r") as f:
     rd_config = yaml.safe_load(f)
 
 n = rd_config["n"]
 params_RD_dict = rd_config["param_RD"]
 
-# Workflow parameters
-combine = ['funSimMax'] #["funSimAvg","BMA",'funSimMax','BUMS']
+## Workflow parameters
+combine = ['funSimMax'] #["funSimAvg","BMA",'funSimMax','BUMS','rsd]
 sm_method =["resnik"] # "graphic",'rel','ic','lin','jc']
 weight_flag = "n"
 product4 = "productmai2024_all_vectors_withontologyX"
 
-# Generate all vectors
+## Generate all vectors
 n_weights = 5
 
 vector_strs = []
@@ -72,7 +71,7 @@ rule run_python_script:
     shell:
         r"""
         mkdir -p $(dirname {output.sm_xlsx})
-        python -m 1_make_ra_mm \
+        python -m bin.1_make_ra_mm \
             {wildcards.i} \
             {params.params_RD} \
             {wildcards.combine} \

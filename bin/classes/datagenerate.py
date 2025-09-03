@@ -1,4 +1,4 @@
-from get_packages import * 
+from bin.get_packages import * 
 import xmltodict
 
  

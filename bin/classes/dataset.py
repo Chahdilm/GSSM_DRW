@@ -1,4 +1,4 @@
-from classes.datagenerate import *
+from bin.classes.datagenerate import *
 
 
 
@@ -310,6 +310,33 @@ class DataSet(DataGenerate):
             all_interactions_json.add((str("ORPHA:"+id_disease),name_disease,section_type,section_group))
         df_pd1 = pd.DataFrame(all_interactions_json,columns=["ORPHACode","Name","Type","Group"])
         return df_pd1
+    
+    def df_pd6(self):
+        with open(self.input_path,'r') as file_phenopacket_result:
+                root = json.load(file_phenopacket_result)
+            
+        root_diseases_json = root['JDBOR']['DisorderList']['Disorder']
+        all_interactions_json = set()
+        for one_dict in root_diseases_json:
+            id_disease =  f"ORPHA:{one_dict['OrphaCode']}"
+            name_disease =  one_dict['Name']['#text']
+
+            genelist = one_dict['DisorderGeneAssociationList']['DisorderGeneAssociation']
+
+            if not isinstance(genelist, list):
+                genelist = [genelist]
+
+            for g in genelist:
+                gene = g['Gene']
+                gene_orphaid = gene['@id']
+                gene_symbol = gene['Symbol'] 
+                all_interactions_json.add((id_disease,name_disease,str(gene_orphaid),str(gene_symbol)))
+
+
+        df_pd6 = pd.DataFrame(all_interactions_json,columns=["ORPHACode","Name","Gene_orphaid","Symbol"])
+        return df_pd6
+
+
 
     def df_pd7(self):
         with open(self.input_path, 'r', encoding='utf-8') as f:

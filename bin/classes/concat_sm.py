@@ -1,4 +1,4 @@
-from set_log import * 
+from bin.set_log import * 
 from pathlib import Path
 
 
@@ -105,7 +105,7 @@ class ConcatSm():
         mat = pd.concat(rows).dropna()
         labels = sorted(set(mat.index) | set(mat.columns))
         mat = mat.reindex(index=labels, columns=labels, fill_value=0)
-        out_path = Path(base_dir) / f"{self.vector_str}_concat_matrix.xlsx"
+        out_path = Path(base_dir) / f"{self.vector_str}.xlsx"
         mat.to_excel(out_path)
         print("Wrote concatenated matrix to %s", out_path)
 

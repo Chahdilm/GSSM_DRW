@@ -1,9 +1,11 @@
 import os 
 current_dir = os.getcwd()
 print(current_dir)
-path_act = "/home/maroua/Bureau/wip/my_pipeline_v2/"
-os.chdir(path_act)
-# Optional: check that it worked
-print("Current directory is now:", os.getcwd())
+path_act = "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW"
 
-from bin.path_variable import *
+if not os.path.exists(path_act):
+    print("Path does not exist:", path_act)
+else:
+    os.chdir(path_act)
+    print("Current directory is now:", os.getcwd())
+ 

@@ -2,19 +2,8 @@ import os
 import argparse
 
 
-# shared argument definitions
-def add_common_args():
-    p = argparse.ArgumentParser(
-        description="Compute semantic measures per patient–RD pair and export results"
-    )
-    p.add_argument("index",             help="Run identifier")
-    p.add_argument("param_rd",          help="Target ORPHA code, e.g. ORPHA:610")
-    p.add_argument("combine",           choices=["funSimMax","funSimAvg","BMA",'rsd'])
-    p.add_argument("method",            choices=["resnik","lin","jiang"])
-    p.add_argument("is_freq",           choices=["y","n"])
-    p.add_argument("pd4",               help="Product4 dataset label")
-    p.add_argument("vector_str",        help="Weights e.g. '0.99_0.77_0.65'")
-    return p.parse_args()
+
+
 # output directory helper
 def make_output_dir(base, combine, method,is_freq, pd4, vector_str):
     out =  f"{base}/{combine}/{method}/{is_freq}/{pd4}/{vector_str}"

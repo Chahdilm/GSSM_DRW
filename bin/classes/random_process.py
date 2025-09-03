@@ -1,4 +1,4 @@
-from set_log import *
+from bin.set_log import *
 
 
 
@@ -61,7 +61,7 @@ class RandomWalker:
 
         out_path = os.path.join(self.output_dir, f"{seed_id}.xlsx")
         df_pr.to_excel(out_path, engine='openpyxl')
-        print("Seed %s done in %.1fs → %s", seed_id, time.perf_counter()-t0, out_path)
+        print("Seed %s done in %.1fs->  %s", seed_id, time.perf_counter()-t0, out_path)
 
 
 class RandomWalkBatch:
@@ -86,7 +86,7 @@ class RandomWalkBatch:
         extract_seed = {f.split('.')[0] for f in os.listdir(self.output_dir)}
         first_seed = self.seeds[0]
         if first_seed in extract_seed:
-            logging.warning("First seed %s already done → skipping batch", first_seed)
+            logging.warning("First seed %s already done -> skipping batch", first_seed)
             return
 
         for seed in self.seeds:

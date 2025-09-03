@@ -1,0 +1,93 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+run_python_script     4319
+total                 4320
+
+Select jobs to execute...
+Execute 2 jobs...
+[Thu Aug 28 19:49:21 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/3464_ORPHA-79127.xlsx
+    jobid: 3464
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/3464_ORPHA-79127.xlsx
+    wildcards: combine=rsd, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=3_2_2_2_1, i=3464, param_file=ORPHA-79127
+    resources: tmpdir=/tmp
+
+[Thu Aug 28 19:49:21 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/3497_ORPHA-79242.xlsx
+    jobid: 3497
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/3497_ORPHA-79242.xlsx
+    wildcards: combine=rsd, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=3_2_2_2_1, i=3497, param_file=ORPHA-79242
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+Select jobs to execute...
+[Thu Aug 28 19:49:58 2025]
+Finished jobid: 3497 (Rule: run_python_script)
+1 of 4320 steps (0.0%) done
+Execute 1 jobs...
+[Thu Aug 28 19:49:58 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx
+    jobid: 1949
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx
+    wildcards: combine=rsd, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=3_2_2_2_1, i=1949, param_file=ORPHA-3082
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+Select jobs to execute...
+[Thu Aug 28 19:50:00 2025]
+Finished jobid: 3464 (Rule: run_python_script)
+2 of 4320 steps (0.0%) done
+Execute 1 jobs...
+[Thu Aug 28 19:50:00 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/2557_ORPHA-404448.xlsx
+    jobid: 2557
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/2557_ORPHA-404448.xlsx
+    wildcards: combine=rsd, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=3_2_2_2_1, i=2557, param_file=ORPHA-404448
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+Select jobs to execute...
+Terminating processes on user request, this might take some time.
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 72:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx)
+        python -m bin.1_make_ra_mm \
+            1949 \
+            ORPHA:3082 \
+            rsd \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            3_2_2_2_1' died with <Signals.SIGINT: 2>.
+[Thu Aug 28 19:50:22 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1949
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/rsd/resnik/n/productmai2024_all_vectors_withontologyX/3_2_2_2_1/1949_ORPHA-3082.xlsx)
+        python -m bin.1_make_ra_mm \
+            1949 \
+            ORPHA:3082 \
+            rsd \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            3_2_2_2_1
+        
+        (command exited with non-zero exit code)

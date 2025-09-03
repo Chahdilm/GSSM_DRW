@@ -1,0 +1,1254 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+run_python_script     4319
+total                 4320
+
+Select jobs to execute...
+Execute 22 jobs...
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/403_ORPHA-1447.xlsx
+    jobid: 403
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/403_ORPHA-1447.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=403, param_file=ORPHA-1447
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/23_ORPHA-100086.xlsx
+    jobid: 23
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/23_ORPHA-100086.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=23, param_file=ORPHA-100086
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/2698_ORPHA-449280.xlsx
+    jobid: 2698
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/2698_ORPHA-449280.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=2698, param_file=ORPHA-449280
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1258_ORPHA-238583.xlsx
+    jobid: 1258
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1258_ORPHA-238583.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=1258, param_file=ORPHA-238583
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3583_ORPHA-79503.xlsx
+    jobid: 3583
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3583_ORPHA-79503.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=3583, param_file=ORPHA-79503
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3612_ORPHA-829.xlsx
+    jobid: 3612
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3612_ORPHA-829.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=3612, param_file=ORPHA-829
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/82_ORPHA-101112.xlsx
+    jobid: 82
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/82_ORPHA-101112.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=82, param_file=ORPHA-101112
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3277_ORPHA-69078.xlsx
+    jobid: 3277
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3277_ORPHA-69078.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=3277, param_file=ORPHA-69078
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1087_ORPHA-2220.xlsx
+    jobid: 1087
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1087_ORPHA-2220.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=1087, param_file=ORPHA-2220
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4162_ORPHA-98768.xlsx
+    jobid: 4162
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4162_ORPHA-98768.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=4162, param_file=ORPHA-98768
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/131_ORPHA-1104.xlsx
+    jobid: 131
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/131_ORPHA-1104.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=131, param_file=ORPHA-1104
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3711_ORPHA-85323.xlsx
+    jobid: 3711
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3711_ORPHA-85323.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=3711, param_file=ORPHA-85323
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/846_ORPHA-199244.xlsx
+    jobid: 846
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/846_ORPHA-199244.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=846, param_file=ORPHA-199244
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1396_ORPHA-251937.xlsx
+    jobid: 1396
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1396_ORPHA-251937.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=1396, param_file=ORPHA-251937
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1435_ORPHA-255138.xlsx
+    jobid: 1435
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1435_ORPHA-255138.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=1435, param_file=ORPHA-255138
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4195_ORPHA-98878.xlsx
+    jobid: 4195
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4195_ORPHA-98878.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=4195, param_file=ORPHA-98878
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/990_ORPHA-213.xlsx
+    jobid: 990
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/990_ORPHA-213.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=990, param_file=ORPHA-213
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3180_ORPHA-63446.xlsx
+    jobid: 3180
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3180_ORPHA-63446.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=3180, param_file=ORPHA-63446
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4162_ORPHA-98768.xlsx)
+        python -m 1_make_ra_mm \
+            4162 \
+            ORPHA:98768 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 4162
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4162_ORPHA-98768.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4162_ORPHA-98768.xlsx)
+        python -m 1_make_ra_mm \
+            4162 \
+            ORPHA:98768 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1396_ORPHA-251937.xlsx)
+        python -m 1_make_ra_mm \
+            1396 \
+            ORPHA:251937 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1396
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1396_ORPHA-251937.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1396_ORPHA-251937.xlsx)
+        python -m 1_make_ra_mm \
+            1396 \
+            ORPHA:251937 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/2698_ORPHA-449280.xlsx)
+        python -m 1_make_ra_mm \
+            2698 \
+            ORPHA:449280 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 2698
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/2698_ORPHA-449280.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/2698_ORPHA-449280.xlsx)
+        python -m 1_make_ra_mm \
+            2698 \
+            ORPHA:449280 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/82_ORPHA-101112.xlsx)
+        python -m 1_make_ra_mm \
+            82 \
+            ORPHA:101112 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 82
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/82_ORPHA-101112.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/82_ORPHA-101112.xlsx)
+        python -m 1_make_ra_mm \
+            82 \
+            ORPHA:101112 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/23_ORPHA-100086.xlsx)
+        python -m 1_make_ra_mm \
+            23 \
+            ORPHA:100086 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 23
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/23_ORPHA-100086.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/23_ORPHA-100086.xlsx)
+        python -m 1_make_ra_mm \
+            23 \
+            ORPHA:100086 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/846_ORPHA-199244.xlsx)
+        python -m 1_make_ra_mm \
+            846 \
+            ORPHA:199244 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 846
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/846_ORPHA-199244.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/846_ORPHA-199244.xlsx)
+        python -m 1_make_ra_mm \
+            846 \
+            ORPHA:199244 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1087_ORPHA-2220.xlsx)
+        python -m 1_make_ra_mm \
+            1087 \
+            ORPHA:2220 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1087
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1087_ORPHA-2220.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1087_ORPHA-2220.xlsx)
+        python -m 1_make_ra_mm \
+            1087 \
+            ORPHA:2220 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4195_ORPHA-98878.xlsx)
+        python -m 1_make_ra_mm \
+            4195 \
+            ORPHA:98878 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 4195
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4195_ORPHA-98878.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4195_ORPHA-98878.xlsx)
+        python -m 1_make_ra_mm \
+            4195 \
+            ORPHA:98878 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3711_ORPHA-85323.xlsx)
+        python -m 1_make_ra_mm \
+            3711 \
+            ORPHA:85323 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3711
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3711_ORPHA-85323.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3711_ORPHA-85323.xlsx)
+        python -m 1_make_ra_mm \
+            3711 \
+            ORPHA:85323 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3583_ORPHA-79503.xlsx)
+        python -m 1_make_ra_mm \
+            3583 \
+            ORPHA:79503 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3583
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3583_ORPHA-79503.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3583_ORPHA-79503.xlsx)
+        python -m 1_make_ra_mm \
+            3583 \
+            ORPHA:79503 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3277_ORPHA-69078.xlsx)
+        python -m 1_make_ra_mm \
+            3277 \
+            ORPHA:69078 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3277
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3277_ORPHA-69078.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3277_ORPHA-69078.xlsx)
+        python -m 1_make_ra_mm \
+            3277 \
+            ORPHA:69078 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/131_ORPHA-1104.xlsx)
+        python -m 1_make_ra_mm \
+            131 \
+            ORPHA:1104 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 131
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/131_ORPHA-1104.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/131_ORPHA-1104.xlsx)
+        python -m 1_make_ra_mm \
+            131 \
+            ORPHA:1104 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/275_ORPHA-134.xlsx
+    jobid: 275
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/275_ORPHA-134.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=275, param_file=ORPHA-134
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1435_ORPHA-255138.xlsx)
+        python -m 1_make_ra_mm \
+            1435 \
+            ORPHA:255138 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1435
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1435_ORPHA-255138.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1435_ORPHA-255138.xlsx)
+        python -m 1_make_ra_mm \
+            1435 \
+            ORPHA:255138 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3612_ORPHA-829.xlsx)
+        python -m 1_make_ra_mm \
+            3612 \
+            ORPHA:829 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3612
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3612_ORPHA-829.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3612_ORPHA-829.xlsx)
+        python -m 1_make_ra_mm \
+            3612 \
+            ORPHA:829 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/403_ORPHA-1447.xlsx)
+        python -m 1_make_ra_mm \
+            403 \
+            ORPHA:1447 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 403
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/403_ORPHA-1447.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/403_ORPHA-1447.xlsx)
+        python -m 1_make_ra_mm \
+            403 \
+            ORPHA:1447 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1258_ORPHA-238583.xlsx)
+        python -m 1_make_ra_mm \
+            1258 \
+            ORPHA:238583 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1258
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1258_ORPHA-238583.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1258_ORPHA-238583.xlsx)
+        python -m 1_make_ra_mm \
+            1258 \
+            ORPHA:238583 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/990_ORPHA-213.xlsx)
+        python -m 1_make_ra_mm \
+            990 \
+            ORPHA:213 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 990
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/990_ORPHA-213.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/990_ORPHA-213.xlsx)
+        python -m 1_make_ra_mm \
+            990 \
+            ORPHA:213 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1575_ORPHA-268943.xlsx
+    jobid: 1575
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1575_ORPHA-268943.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=1575, param_file=ORPHA-268943
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3404_ORPHA-75840.xlsx
+    jobid: 3404
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3404_ORPHA-75840.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=3404, param_file=ORPHA-75840
+    resources: tmpdir=/tmp
+
+[Tue Aug  5 10:46:47 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4224_ORPHA-98964.xlsx
+    jobid: 4224
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4224_ORPHA-98964.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=productmai2024_all_vectors_withontologyX, vector_str=1_1_1_1_1, i=4224, param_file=ORPHA-98964
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3180_ORPHA-63446.xlsx)
+        python -m 1_make_ra_mm \
+            3180 \
+            ORPHA:63446 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3180
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3180_ORPHA-63446.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3180_ORPHA-63446.xlsx)
+        python -m 1_make_ra_mm \
+            3180 \
+            ORPHA:63446 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/275_ORPHA-134.xlsx)
+        python -m 1_make_ra_mm \
+            275 \
+            ORPHA:134 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 275
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/275_ORPHA-134.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/275_ORPHA-134.xlsx)
+        python -m 1_make_ra_mm \
+            275 \
+            ORPHA:134 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3404_ORPHA-75840.xlsx)
+        python -m 1_make_ra_mm \
+            3404 \
+            ORPHA:75840 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3404
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3404_ORPHA-75840.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3404_ORPHA-75840.xlsx)
+        python -m 1_make_ra_mm \
+            3404 \
+            ORPHA:75840 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1575_ORPHA-268943.xlsx)
+        python -m 1_make_ra_mm \
+            1575 \
+            ORPHA:268943 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1575
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1575_ORPHA-268943.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1575_ORPHA-268943.xlsx)
+        python -m 1_make_ra_mm \
+            1575 \
+            ORPHA:268943 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/Snakefile.projetmm", line 73:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4224_ORPHA-98964.xlsx)
+        python -m 1_make_ra_mm \
+            4224 \
+            ORPHA:98964 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1' returned non-zero exit status 1.
+[Tue Aug  5 10:46:47 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 4224
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4224_ORPHA-98964.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4224_ORPHA-98964.xlsx)
+        python -m 1_make_ra_mm \
+            4224 \
+            ORPHA:98964 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 23
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/23_ORPHA-100086.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/23_ORPHA-100086.xlsx)
+        python -m 1_make_ra_mm \
+            23 \
+            ORPHA:100086 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3583
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3583_ORPHA-79503.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3583_ORPHA-79503.xlsx)
+        python -m 1_make_ra_mm \
+            3583 \
+            ORPHA:79503 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 2698
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/2698_ORPHA-449280.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/2698_ORPHA-449280.xlsx)
+        python -m 1_make_ra_mm \
+            2698 \
+            ORPHA:449280 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 403
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/403_ORPHA-1447.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/403_ORPHA-1447.xlsx)
+        python -m 1_make_ra_mm \
+            403 \
+            ORPHA:1447 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1258
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1258_ORPHA-238583.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1258_ORPHA-238583.xlsx)
+        python -m 1_make_ra_mm \
+            1258 \
+            ORPHA:238583 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 4162
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4162_ORPHA-98768.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4162_ORPHA-98768.xlsx)
+        python -m 1_make_ra_mm \
+            4162 \
+            ORPHA:98768 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3612
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3612_ORPHA-829.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3612_ORPHA-829.xlsx)
+        python -m 1_make_ra_mm \
+            3612 \
+            ORPHA:829 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3277
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3277_ORPHA-69078.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3277_ORPHA-69078.xlsx)
+        python -m 1_make_ra_mm \
+            3277 \
+            ORPHA:69078 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 82
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/82_ORPHA-101112.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/82_ORPHA-101112.xlsx)
+        python -m 1_make_ra_mm \
+            82 \
+            ORPHA:101112 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1087
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1087_ORPHA-2220.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1087_ORPHA-2220.xlsx)
+        python -m 1_make_ra_mm \
+            1087 \
+            ORPHA:2220 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3711
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3711_ORPHA-85323.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3711_ORPHA-85323.xlsx)
+        python -m 1_make_ra_mm \
+            3711 \
+            ORPHA:85323 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 131
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/131_ORPHA-1104.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/131_ORPHA-1104.xlsx)
+        python -m 1_make_ra_mm \
+            131 \
+            ORPHA:1104 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1396
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1396_ORPHA-251937.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1396_ORPHA-251937.xlsx)
+        python -m 1_make_ra_mm \
+            1396 \
+            ORPHA:251937 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 846
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/846_ORPHA-199244.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/846_ORPHA-199244.xlsx)
+        python -m 1_make_ra_mm \
+            846 \
+            ORPHA:199244 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 4195
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4195_ORPHA-98878.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4195_ORPHA-98878.xlsx)
+        python -m 1_make_ra_mm \
+            4195 \
+            ORPHA:98878 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1435
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1435_ORPHA-255138.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1435_ORPHA-255138.xlsx)
+        python -m 1_make_ra_mm \
+            1435 \
+            ORPHA:255138 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 990
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/990_ORPHA-213.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/990_ORPHA-213.xlsx)
+        python -m 1_make_ra_mm \
+            990 \
+            ORPHA:213 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3180
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3180_ORPHA-63446.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3180_ORPHA-63446.xlsx)
+        python -m 1_make_ra_mm \
+            3180 \
+            ORPHA:63446 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 275
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/275_ORPHA-134.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/275_ORPHA-134.xlsx)
+        python -m 1_make_ra_mm \
+            275 \
+            ORPHA:134 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 1575
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1575_ORPHA-268943.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/1575_ORPHA-268943.xlsx)
+        python -m 1_make_ra_mm \
+            1575 \
+            ORPHA:268943 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 3404
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3404_ORPHA-75840.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/3404_ORPHA-75840.xlsx)
+        python -m 1_make_ra_mm \
+            3404 \
+            ORPHA:75840 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+[Tue Aug  5 10:46:48 2025]
+Error in rule run_python_script:
+    message: None
+    jobid: 4224
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4224_ORPHA-98964.xlsx
+    shell:
+        
+        mkdir -p $(dirname /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/productmai2024_all_vectors_withontologyX/1_1_1_1_1/4224_ORPHA-98964.xlsx)
+        python -m 1_make_ra_mm \
+            4224 \
+            ORPHA:98964 \
+            funSimMax \
+            resnik \
+            n \
+            productmai2024_all_vectors_withontologyX \
+            1_1_1_1_1
+        
+        (command exited with non-zero exit code)
+Complete log(s): /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/bin/.snakemake/log/2025-08-05T104646.370588.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
