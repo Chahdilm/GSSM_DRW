@@ -293,7 +293,7 @@ class DataSet(DataGenerate):
     ########################################################################################################################
     
     ############################################################
-    #####               Build df for pd1                   #####
+    #####               Build df pd1                   #####
     ############################################################
     def df_pd1(self):
         with open(self.input_path,'r') as file_phenopacket_result:
@@ -311,6 +311,7 @@ class DataSet(DataGenerate):
         df_pd1 = pd.DataFrame(all_interactions_json,columns=["ORPHACode","Name","Type","Group"])
         return df_pd1
     
+
     def df_pd6(self):
         with open(self.input_path,'r') as file_phenopacket_result:
                 root = json.load(file_phenopacket_result)
@@ -335,7 +336,6 @@ class DataSet(DataGenerate):
 
         df_pd6 = pd.DataFrame(all_interactions_json,columns=["ORPHACode","Name","Gene_orphaid","Symbol"])
         return df_pd6
-
 
 
     def df_pd7(self):
@@ -393,78 +393,10 @@ class DataSet(DataGenerate):
         df_pd7 = pd.DataFrame(all_interactions,columns=["ORPHACode","Classif_id","Classif_name","Classif_type"])
         return df_pd7
 
-    ###################################################################################
-    #####                                  From orphacode get classif             #####
-    ###################################################################################
-    # jsp si c'est compatible pour toute les classif 
-    def traverse_node(self,node, root_orpha_id, root_orpha_name, interactions):
-        """
-        Recursively traverses a classification node, adds the association between the
-        parent and each child to the interactions set, and continues deeper into each node.
-        
-        Each tuple in interactions is of the form:
-        (root_orpha_id, root_orpha_name, parent_id, parent_type, child_id, child_type)
-        """
-        # Get current node's disorder info
-        current_disorder = node.get("Disorder", {})
-        parent_id = "ORPHA:" + current_disorder.get("OrphaCode", "")
-        parent_type = current_disorder.get("DisorderType", {}).get("Name", {}).get("#text", "")
-        
-        # Get the child list if present
-        child_list = node.get("ClassificationNodeChildList", {})
-        associations = child_list.get("ClassificationNode")
-        
-        if associations:
-            # Ensure associations is a list (even if there's only one child)
-            if not isinstance(associations, list):
-                associations = [associations]
-            
-            for association in associations:
-                target = association.get("Disorder", {})
-                child_id = "ORPHA:" + target.get("OrphaCode", "")
-                child_type = target.get("DisorderType", {}).get("Name", {}).get("#text", "")
-                
-                # Add the link from the current (parent) node to the child
-                interactions.add((root_orpha_id, root_orpha_name, parent_id, parent_type, child_id, child_type))
-                
-                # Recursively traverse the current child association for deeper levels
-                DataSet.traverse_node(self,association, root_orpha_id, root_orpha_name, interactions)
-    
-    def df_classif(self):
-        with open(self.input_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        # Initialize the set to store associations
-        all_interactions = set()
-
-        # Extract the root classification node
-        classification = data['JDBOR']['ClassificationList']["Classification"]
-        root_node = classification['ClassificationNodeRootList']['ClassificationNode']
-        root_disorder = root_node.get("Disorder", {})
-        root_orpha_id = "ORPHA:" + root_disorder.get("OrphaCode", "")
-        root_orpha_name = root_disorder.get("Name", {}).get("#text", "")
-
-        # Get immediate child nodes; ensure it is a list
-        child_nodes = root_node.get("ClassificationNodeChildList", {}).get("ClassificationNode", [])
-        if not isinstance(child_nodes, list):
-            child_nodes = [child_nodes]
-
-        # Traverse every immediate child node
-        for node in child_nodes:
-            DataSet.traverse_node(self,node, root_orpha_id, root_orpha_name, all_interactions)
-
-        # Create a Pandas DataFrame with the collected data
-        df_pd_classif = pd.DataFrame(
-            list(all_interactions),
-            columns=["root", "root_name", "parent_id", "parent_type", "child_id", "child_type"]
-        )
-        return df_pd_classif
-
-
 
     ###################################################################################
     #####       From orphacode get theirs parents(orphapckets and pd1)            #####
     ###################################################################################
-
     def orphacodes_n_parents(self,path,df_pd1):
         ## extract the list of orphacode that are available on pd1
         orphacodes_from_pd1 = df_pd1['ORPHACode'].drop_duplicates().tolist()
@@ -507,12 +439,109 @@ class DataSet(DataGenerate):
         return orphacode_parent
 
 
+    ###################################################################################
+    #####                                  From orphacode get classif             #####
+    ###################################################################################
+    def traverse_node(self,node, root_orpha_id, root_orpha_name, interactions):
+        """
+        Recursively traverses a classification node, adds the association between the
+        parent and each child to the interactions set, and continues deeper into each node.
+        
+        Each tuple in interactions is of the form:
+        (root_orpha_id, root_orpha_name, parent_id, parent_type, child_id, child_type)
+        """
+        # Get current node's disorder info
+        current_disorder = node.get("Disorder", {})
+        parent_id = "ORPHA:" + current_disorder.get("OrphaCode", "")
+        parent_type = current_disorder.get("DisorderType", {}).get("Name", {}).get("#text", "")
+        
+        # Get the child list if present
+        child_list = node.get("ClassificationNodeChildList", {})
+        associations = child_list.get("ClassificationNode")
+        
+        if associations:
+            # Ensure associations is a list (even if there's only one child)
+            if not isinstance(associations, list):
+                associations = [associations]
+            
+            for association in associations:
+                target = association.get("Disorder", {})
+                child_id = "ORPHA:" + target.get("OrphaCode", "")
+                child_type = target.get("DisorderType", {}).get("Name", {}).get("#text", "")
+                
+                # Add the link from the current (parent) node to the child
+                interactions.add((root_orpha_id, root_orpha_name, parent_id, parent_type, child_id, child_type))
+                
+                # Recursively traverse the current child association for deeper levels
+                DataSet.traverse_node(self,association, root_orpha_id, root_orpha_name, interactions)
+    
+
+    def df_classif(self):
+        with open(self.input_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        # Initialize the set to store associations
+        all_interactions = set()
+
+        # Extract the root classification node
+        classification = data['JDBOR']['ClassificationList']["Classification"]
+        root_node = classification['ClassificationNodeRootList']['ClassificationNode']
+        root_disorder = root_node.get("Disorder", {})
+        root_orpha_id = "ORPHA:" + root_disorder.get("OrphaCode", "")
+        root_orpha_name = root_disorder.get("Name", {}).get("#text", "")
+
+        # Get immediate child nodes; ensure it is a list
+        child_nodes = root_node.get("ClassificationNodeChildList", {}).get("ClassificationNode", [])
+        if not isinstance(child_nodes, list):
+            child_nodes = [child_nodes]
+
+        # Traverse every immediate child node
+        for node in child_nodes:
+            DataSet.traverse_node(self,node, root_orpha_id, root_orpha_name, all_interactions)
+
+        # Create a Pandas DataFrame with the collected data
+        df_pd_classif = pd.DataFrame(
+            list(all_interactions),
+            columns=["root", "root_name", "parent_id", "parent_type", "child_id", "child_type"]
+        )
+        return df_pd_classif
 
 
+    def merge_all_classif(self,path_one_classif):
+        """merge all the classification df into one df """
+        df_list = []
+        pd_orphanet_classif = os.listdir(path_one_classif)
+        for excel_file in pd_orphanet_classif:
+            if ".xlsx" in excel_file:
+                print(excel_file)
+
+                # Load the classification DataFrame for this motif.
+                df_pd_classif = pd.read_excel(os.path.join(path_one_classif, excel_file), index_col=0)
+                if len(df_pd_classif) != 0:
+                    df_list.append(df_pd_classif)
+
+        df_all_clasiff = pd.concat(df_list)
+        return df_all_clasiff
 
 
+    ###################################################################################
+    #####       Build yaml file based on orphacode from pd4 a                     #####
+    ###################################################################################
+    def build_yaml_rds(self,df_rd,col_name):
+        """
+        Extract  ORPHA codes from the given DataFrame,
+        build a Snakemake config dict, write it to YAML, and return it.
+        """
+        raw_codes = df_rd[col_name].dropna().astype(str)
+        rds = {code.strip() for code in raw_codes
+               if code.strip().startswith("ORPHA")}
 
-    ########################################################################################################################
+        config_data = {
+            "n": len(rds),
+            "param_RD": {i+1: code for i, code in enumerate(sorted(rds))}
+        }
+
+        return config_data
+
 
     ############################################################
     #####     Build df match omim orpha id and gene        #####
@@ -539,9 +568,6 @@ class DataSet(DataGenerate):
         
         return pd.DataFrame(tuple_interaction,columns=['OrphaCode','OMIM'])
 
-
-
-    ########################################################################################################################
 
     ############################################################
     #####               Build DICT prevalence              #####
