@@ -50,20 +50,23 @@ VECTOR_STRINGS=(
 
 name_col1='patients'
 name_col2='RDs'
-pdtype_pattern='productmai2024_controvector_withontologyX' 
+pdtype_pattern='productmai2024_withontologyX_donesept2025' 
 
 for VS in "${VECTOR_STRINGS[@]}"; do
 
-  cd bin/
-  snakemake --snakefile Snakefile.projetmp --cores 22 --config vector_str="$VS"
+
+  PYTHONPATH=$(pwd) snakemake \
+    --snakefile bin/Snakefile.projetmp \
+    --cores 22 \
+    --config vector_str="$VS"
   # # snakemake --cores 22 --config vector_str=1_0_0_0
 
 
-  python3 2_concat_both.py process_similarity \
+  python3 -m bin.2_concat_both process_similarity \
     -v "$VS" \
     --col1 "$name_col1" \
     --col2 "$name_col2" \
-    --pdtype_pattern "$pdtype_pattern"
+    # --pdtype_pattern "$pdtype_pattern" already in snakefile
 
 
 done

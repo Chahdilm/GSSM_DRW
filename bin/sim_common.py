@@ -97,3 +97,7 @@ def select_vectors(workflow_cfg, vector_strs, n_weights):
         f"Invalid vector_str '{vs_req}'. Must be one of {vector_strs}, "
         "or a digit string of length {n_weights} that reconstructs to one."
     )
+
+
+
+ 

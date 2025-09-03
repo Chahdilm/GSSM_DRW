@@ -5,47 +5,32 @@ from bin.path_variable import (
     PATH_OUTPUT_MM,
     PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,
     PATH_OUTPUT_PRODUCT, # temp a sup 
+    PATH_YAML_PRODUCT4,
+    COL_DF_PRODUCT4_ORPHACODE,
+
 )
 from bin.sim_common import (parse_vector_weights,make_output_dir)
+from bin.classes.dataset import DataSet
 
 
-def lauch_sm_mm(index,param_rd,combine,method,is_freq,pd4,vector_str):
+def lauch_sm_mm(df1,df2,index,param_rd,combine,method,is_freq,pd4,vector_str):
  
     print(f"Parameters: {index}\t{param_rd}\t{combine}\t{method}\t{is_freq}\t{pd4}\t{vector_str}\t")
+    
+    rd_id_list = df1['ORPHAcode'].drop_duplicates().tolist()
 
     # 1. Parse weights & prepare output directory
     weights = parse_vector_weights(vector_str)
     out_dir = make_output_dir(PATH_OUTPUT_MM,combine,method,is_freq,pd4,vector_str)
 
-    # mini_rd = [
-    #     "ORPHA:610",
-    #     "ORPHA:100985",
-    #     "ORPHA:412057",
-    #     "ORPHA:329284",
-    #     "ORPHA:100991",
-    #     "ORPHA:34516",
-    #     "ORPHA:79445",
-    #     "ORPHA:1465",
-    #     "ORPHA:99949",
-    #     "ORPHA:663"
-    # ]
-
-    # 2. Load dataframes
-    df_raredisease = pd.read_excel(PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,index_col =0) 
-    rd_id_list = df_raredisease['ORPHAcode'].drop_duplicates().tolist()
-    df_raredisease = df_raredisease[df_raredisease['ORPHAcode'].isin(rd_id_list)]  # 610   166024
-
- 
-    df_raredisease_2 = pd.read_excel(PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,index_col =0) 
-    df_raredisease_2 = df_raredisease_2[df_raredisease_2['ORPHAcode'].isin(rd_id_list)]  # 610   166024
 
 
     # 4. Initialize similarity engine
-    sim = Sim_measure(df_raredisease_2,df_raredisease,"ORPHAcode","ORPHAcode")
+    sim = Sim_measure(df2,df1,"ORPHAcode","ORPHAcode")
 
     # 5. Run (or export empty if RD not in dataset)
-    if param_rd not in df_raredisease_2["ORPHAcode"].tolist():
-        empty_df = pd.DataFrame(columns=["RDs", "patients", "score"], index=[0])
+    if param_rd not in df2["ORPHAcode"].tolist():
+        empty_df = pd.DataFrame(columns=["OC1", "OC2", "score"], index=[0])
         empty_path = f"{out_dir}/{index}_{param_rd.replace(':','-')}.xlsx"
         sim.export_sm(empty_df, empty_path)
         print(f"RD {param_rd} not in dataset; exported empty to {empty_path}")
@@ -97,10 +82,49 @@ if __name__ == "__main__":
     # combine = "funSimMax"
     # method = "resnik"
     # is_freq = "n"
-    # pd4 = "productmai2024_all_vectors_withontologyX"
+    # pd4 = "test"
     # vector_str = "1_1_1_1_1"  #'3_2_2_2_1'
     
     # for onerd in param_rd.values():
-    #     lauch_sm_mm(index,onerd,combine,method,is_freq,pd4,vector_str)
+    #     lauch_sm_mm(df_raredisease,df_raredisease_2,index,onerd,combine,method,is_freq,pd4,vector_str)
 
-    lauch_sm_mm(index,param_rd,combine,method,is_freq,pd4,vector_str)
+
+    ########################################################################
+    ## input RD df : 
+
+        # mini_rd = [
+    #     "ORPHA:610",
+    #     "ORPHA:100985",
+    #     "ORPHA:412057",
+    #     "ORPHA:329284",
+    #     "ORPHA:100991",
+    #     "ORPHA:34516",
+    #     "ORPHA:79445",
+    #     "ORPHA:1465",
+    #     "ORPHA:99949",
+    #     "ORPHA:663"
+    # ]
+
+    # mini_rd = [
+    #     "ORPHA:610",
+    #     "ORPHA:100985",
+    # ]
+
+    # 2. Load dataframes
+    df_raredisease = pd.read_excel(PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,index_col =0) 
+    # df_raredisease = df_raredisease[df_raredisease['ORPHAcode'].isin(mini_rd)]  # 610   166024
+
+ 
+    df_raredisease_2 = pd.read_excel(PATH_OUTPUT_DF_PRODUCT4_MATCH_RSD,index_col =0) 
+    # df_raredisease_2 = df_raredisease_2[df_raredisease_2['ORPHAcode'].isin(mini_rd)]  # 610   166024
+ 
+
+    # 3. config yaml depending on RDs available
+    print(f'Create the yaml file for the snakefile (mp/mm) process ')
+    dataset= DataSet(PATH_YAML_PRODUCT4, "")
+    config_yaml = dataset.build_yaml_rds(df_raredisease,COL_DF_PRODUCT4_ORPHACODE)
+    with open(PATH_YAML_PRODUCT4, "w") as f:
+        yaml.dump(config_yaml, f, default_flow_style=False)
+    print(f"yaml file saved to {PATH_YAML_PRODUCT4}")
+
+    lauch_sm_mm(df_raredisease,df_raredisease_2,index,param_rd,combine,method,is_freq,pd4,vector_str)

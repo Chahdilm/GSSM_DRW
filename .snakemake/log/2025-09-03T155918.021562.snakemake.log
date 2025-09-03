@@ -1,0 +1,195 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+run_python_script     4319
+total                 4320
+
+Select jobs to execute...
+Execute 22 jobs...
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2593_ORPHA-415.xlsx
+    jobid: 2593
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2593_ORPHA-415.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=2593, param_file=ORPHA-415
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/538_ORPHA-163703.xlsx
+    jobid: 538
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/538_ORPHA-163703.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=538, param_file=ORPHA-163703
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1648_ORPHA-277.xlsx
+    jobid: 1648
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1648_ORPHA-277.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1648, param_file=ORPHA-277
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3808_ORPHA-900.xlsx
+    jobid: 3808
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3808_ORPHA-900.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=3808, param_file=ORPHA-900
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1127_ORPHA-2274.xlsx
+    jobid: 1127
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1127_ORPHA-2274.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1127, param_file=ORPHA-2274
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2797_ORPHA-47159.xlsx
+    jobid: 2797
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2797_ORPHA-47159.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=2797, param_file=ORPHA-47159
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1057_ORPHA-2200.xlsx
+    jobid: 1057
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1057_ORPHA-2200.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1057, param_file=ORPHA-2200
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3907_ORPHA-91387.xlsx
+    jobid: 3907
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3907_ORPHA-91387.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=3907, param_file=ORPHA-91387
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3487_ORPHA-792.xlsx
+    jobid: 3487
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3487_ORPHA-792.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=3487, param_file=ORPHA-792
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/151_ORPHA-114.xlsx
+    jobid: 151
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/151_ORPHA-114.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=151, param_file=ORPHA-114
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2826_ORPHA-48431.xlsx
+    jobid: 2826
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2826_ORPHA-48431.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=2826, param_file=ORPHA-48431
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3516_ORPHA-793.xlsx
+    jobid: 3516
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3516_ORPHA-793.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=3516, param_file=ORPHA-793
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1156_ORPHA-2289.xlsx
+    jobid: 1156
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1156_ORPHA-2289.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1156, param_file=ORPHA-2289
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1755_ORPHA-286.xlsx
+    jobid: 1755
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1755_ORPHA-286.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1755, param_file=ORPHA-286
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/645_ORPHA-171629.xlsx
+    jobid: 645
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/645_ORPHA-171629.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=645, param_file=ORPHA-171629
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3985_ORPHA-93406.xlsx
+    jobid: 3985
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/3985_ORPHA-93406.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=3985, param_file=ORPHA-93406
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1000_ORPHA-214.xlsx
+    jobid: 1000
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1000_ORPHA-214.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1000, param_file=ORPHA-214
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/190_ORPHA-1194.xlsx
+    jobid: 190
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/190_ORPHA-1194.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=190, param_file=ORPHA-1194
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1184_ORPHA-231140.xlsx
+    jobid: 1184
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1184_ORPHA-231140.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1184, param_file=ORPHA-231140
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1514_ORPHA-261537.xlsx
+    jobid: 1514
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1514_ORPHA-261537.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1514, param_file=ORPHA-261537
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/989_ORPHA-2128.xlsx
+    jobid: 989
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/989_ORPHA-2128.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=989, param_file=ORPHA-2128
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 15:59:19 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1549_ORPHA-264675.xlsx
+    jobid: 1549
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1549_ORPHA-264675.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1549, param_file=ORPHA-264675
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+Select jobs to execute...
+Terminating processes on user request, this might take some time.

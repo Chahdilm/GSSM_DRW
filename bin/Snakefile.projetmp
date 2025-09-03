@@ -1,7 +1,7 @@
 import yaml
 import os
-from path_variable import (PATH_OUTPUT_PRODUCT,PATH_OUTPUT_SM)
-from sim_common import (generate_weight_vec,build_base_dirs,select_vectors)
+from bin.path_variable import (PATH_OUTPUT_PRODUCT,PATH_OUTPUT_SM)
+from bin.sim_common import (generate_weight_vec,build_base_dirs,select_vectors)
 
  
 
@@ -19,7 +19,7 @@ params_RD_dict = rd_config["param_RD"]
 combine = ['rsd'] # 'BUMS',"funSimAvg","BMA",'funSimMax'
 sm_method =["resnik"] # "graphic",'rel','ic','lin','jc'
 weight_flag = "n"
-product4 = "productmai2024_controvector_withontologyX"
+product4 = "productmai2024_withontologyX_donesept2025"
 
 # Generate all vectors
 n_weights = 5
@@ -36,6 +36,7 @@ input_cdf_files = []
 for i, param_file, cmb, sm, vw, base in  build_base_dirs(PATH_OUTPUT_SM,params_RD_dict,n,combine,sm_method,selected_vectors,weight_flag,product4):
     input_files.append(os.path.join(base, f"{i}_{param_file}.xlsx"))
     input_cdf_files.append(os.path.join(base, f"CDF_{i}_{param_file}.xlsx"))
+
 
 
 rule all:
@@ -82,7 +83,7 @@ rule run_python_script:
     shell:
         r"""
         mkdir -p $(dirname {output.sm_xlsx})
-        python -m 1_make_ra \
+        python -m bin.1_make_ra \
             {wildcards.i} \
             {params.params_RD} \
             {wildcards.combine} \

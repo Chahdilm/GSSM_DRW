@@ -23,7 +23,7 @@ def concat_sm():
                     help="vector_str (e.g. 1_1_1_1_1)")
     sm.add_argument("--col1", required=True, help="name of sample column (e.g. patients)")
     sm.add_argument("--col2", required=True, help="name of label column (e.g. RDs)")
-    sm.add_argument("--pdtype_pattern", default="productmai2024_controvector_withontologyX",
+    sm.add_argument("--pdtype_pattern", default="productmai2024_withontologyX_donesept2025",
                     help="pattern to identify PD type in path")
 
 
@@ -34,7 +34,7 @@ def concat_sm():
     concatSm = ConcatSm(args.vector_str,args.col1,args.col2)
 
     if args.command == "concat_matrix":
-        concatSm.concat_matrix(PATH_OUTPUT_MM )
+        concatSm.concat_matrix(PATH_OUTPUT_MM,args.pdtype_pattern  )
     else:  # process_similarity
         concatSm.process_similarity(PATH_OUTPUT_SM,args.pdtype_pattern )
 
@@ -42,5 +42,4 @@ def concat_sm():
 if __name__ == "__main__":
     concat_sm()
 
-
-
+ 

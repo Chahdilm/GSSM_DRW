@@ -1,24 +1,69 @@
 
-from bin.set_log import *
+import os
+import time
+import sys
+
+import pandas as pd
+import numpy as np
+
+import argparse
+
+import networkx as nx
+
+
 from bin.path_variable import (
     PATH_OUTPUT_FOLDER_RW,
-    PATH_OUTPUT_FOLDER_MATRIX_ADD_PATIENT,
-    PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER
+E,
+
 )
  
+#####################################################################################""
+## Parse command-line arguments
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "--mm_type",
+    required=True,
+    help="Filename of the base MM matrix (e.g. mm_1_1_1_1_1)",
+)
+parser.add_argument(
+    "--mp_type",
+    required=True,
+    help="Prefix of the similarity-measure files between patient and M(rd) (e.g. mp_3_2_2_2_1)",
+)
+parser.add_argument(
+    "--seed",
+    required=True,
+    help="Patient ID (e.g. P0001068)",
+)
+parser.add_argument(
+    "--alpha",
+    required=True,
+    help="Restart probability for PageRank (e.g. 0.3)",
+    type=float,
+)
+
+args = parser.parse_args()
+
+mp_type        = args.mp_type
+mm_type        = args.mm_type
+seeds = args.seed
+alpha = float(args.alpha)   
+
+#################################################################################### 
 
 
 # ------------------- Paramètres de run -------------------
-mm_type="mm_1_1_1_1_1" #'mm_1_1_1_1_1' #mm_3_2_2_2_1
-mp_type = "mp_3_2_2_2_1"  # 'mp_1_1_1_1_1' # 'mp_3_2_2_2_1'
+# mm_type="mm_1_1_1_1_1" #'mm_1_1_1_1_1' #mm_3_2_2_2_1
+# mp_type = "mp_3_2_2_2_1"  # 'mp_1_1_1_1_1' # 'mp_3_2_2_2_1'
 mm_type_without_mm = mm_type.replace("mm_","")
 config_output = f"{mm_type}_{mp_type}"
 
+# seeds = ['P0001068']
+first_seed = seeds
 
-lambda_DD = 0.70       # from a disease node: fraction to RD neighbors (rest to genes)
-alpha=0.3
-seeds = ['P1']
-first_seed = seeds[0]
+# alpha=0.3
+
 
 
 # ------------------- Hyperparams (gènes) -------------------
@@ -44,7 +89,7 @@ for onep in list_patient_already:
     onep_not_ext = onep.split('.')[0]
     if first_seed == onep_not_ext:
         print("patient already done")
-        #exit(0)
+        exit(0)
 
 print("Patient start : ")
 
@@ -82,6 +127,10 @@ for ent, g in df_orpha_gene_in_matrix.itertuples(index=False):
     df_m_gene.at[g, ent] = 1.0   # gene -> entity (symmetric)
 
 
+## Remarque :
+## Mettre df_m_gene.max().values[0]  ou 1.0 revient au même car on effectue une normalisation par degré ensuite
+ 
+
 # -------------- Build NetworkX graph and normalize--------------
 G_raw = nx.from_pandas_adjacency(df_m_gene)
 G_raw.remove_edges_from(nx.selfloop_edges(G_raw))
@@ -102,7 +151,9 @@ df_norm = (
 df_norm.drop(columns=['tot'],inplace=True)
 
  
- 
+
+
+
 #######################################################################""
 
 # -------------- PageRank personnalisé (seed = patient) --------------
@@ -130,7 +181,7 @@ pr_diseases = {d: pr.get(d, 0.0) for d in list_disease_in_matrix}
 list_gene_rdi = df_orpha_gene[df_orpha_gene['ORPHACode'] == "ORPHA:610"]['Symbol'].tolist()
 # Build result DataFrame
 df_pr = (
-    pd.Series(pr, name='pg')
+    pd.Series(pr_diseases, name='pg')
     .to_frame()
     .assign(
         sum_degres=lambda df: df.index.map(sum_degres),

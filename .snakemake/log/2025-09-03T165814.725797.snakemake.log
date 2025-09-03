@@ -1,0 +1,53 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+run_python_script        2
+total                    3
+
+Select jobs to execute...
+Execute 2 jobs...
+[Wed Sep  3 16:58:14 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1_ORPHA-100985.xlsx
+    jobid: 1
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1_ORPHA-100985.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=1, param_file=ORPHA-100985
+    resources: tmpdir=/tmp
+
+[Wed Sep  3 16:58:14 2025]
+localrule run_python_script:
+    output: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2_ORPHA-610.xlsx
+    jobid: 2
+    reason: Missing output files: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2_ORPHA-610.xlsx
+    wildcards: combine=funSimMax, sm=resnik, weight_flag=n, product4=test, vector_str=1_1_1_1_1, i=2, param_file=ORPHA-610
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Wed Sep  3 16:58:23 2025]
+Finished jobid: 2 (Rule: run_python_script)
+1 of 3 steps (33%) done
+[Wed Sep  3 16:58:23 2025]
+Finished jobid: 1 (Rule: run_python_script)
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Sep  3 16:58:23 2025]
+localrule all:
+    input: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1_ORPHA-100985.xlsx, /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2_ORPHA-610.xlsx
+    jobid: 0
+    reason: Input files updated by another job: /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/2_ORPHA-610.xlsx, /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/output/mm_sm/funSimMax/resnik/n/test/1_1_1_1_1/1_ORPHA-100985.xlsx
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Wed Sep  3 16:58:23 2025]
+Finished jobid: 0 (Rule: all)
+3 of 3 steps (100%) done
+Complete log(s): /home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/.snakemake/log/2025-09-03T165814.725797.snakemake.log

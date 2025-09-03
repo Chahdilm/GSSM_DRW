@@ -6,14 +6,14 @@ set -euo pipefail
 
 # which vectors to run
 VECTOR_STRINGS=( 
-  '3_2_2_2_1'
+  # '3_2_2_2_1'
   '1_1_1_1_1' 
   )
 
 ## for the concat part 
 name_col1='OC1'
 name_col2='OC2'
-pdtype_pattern='productmai2024_all_vectors_withontologyX' 
+pdtype_pattern='pd4_match_rsd_exeinsept2025' 
 
 ## for the integration part :
 sm_prefix='3_2_2_2_1_rsd_resnik_n_productmai2024_all_vectors_withontologyX'

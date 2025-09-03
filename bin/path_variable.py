@@ -1,31 +1,32 @@
 import os
-from bin.config_json import CONFIG_RD, CONFIG_ALPHA
 
-# Compose config string
+## Compose config string
+CONFIG_RD = "mm_1_1_1_1_1_mp_3_2_2_2_1"
+CONFIG_ALPHA = "0.3"
 CONFIG = f"{CONFIG_RD}_{CONFIG_ALPHA}"
 
-# Path resolution
+## Path resolution
 BIN_DIR = os.path.dirname(os.path.abspath(__file__))
-# BIN_DIR = "/home/maroua/Bureau/mini_pipeline_test/bin"#os.path.dirname(os.path.abspath(__file__))
 
 PROJECT_ROOT = os.path.abspath(os.path.join(BIN_DIR, ".."))  # because path_variable is in bin folder
+#PROJECT_ROOT = "/home/maroua/Bureau/my_pipeline_v3/GSSM_DRW/"#os.path.dirname(os.path.abspath(__file__))
 
-# Output and Input roots
+## Output and Input roots
 PATH_OUTPUT = os.path.join(PROJECT_ROOT, "output")
 PATH_INPUT = os.path.join(PROJECT_ROOT, "input")
 PATH_INPUT_HPO = os.path.join(PATH_INPUT, "hpo")
 
-# Make sure main folders exist
+## Make sure main folders exist
 os.makedirs(PATH_OUTPUT, exist_ok=True)
 os.makedirs(PATH_INPUT, exist_ok=True)
 os.makedirs(PATH_INPUT_HPO, exist_ok=True)
 
-# Log folder
+## Log folder
 PATH_LOG = os.path.join(PATH_OUTPUT, "log")
 os.makedirs(PATH_LOG, exist_ok=True)
 PATH_LOG_FILE = f"{PATH_LOG}/log_{CONFIG}.log"
 
-# Output folders
+## Output folders
 PATH_OUTPUT_SM = os.path.join(PATH_OUTPUT, "mp_sm")
 os.makedirs(PATH_OUTPUT_SM, exist_ok=True)
 
@@ -42,15 +43,15 @@ os.makedirs(PATH_OUTPUT_PATIENT_SOLVERD, exist_ok=True)
 PATH_OUTPUT_DF_PATIENT_ONLY_DISORDER =f"{PATH_OUTPUT_PATIENT_SOLVERD}/patient_confirmed_solverd_only_disorder_with_ontologyX.xlsx"
 
 
-# Columns (keep as string constants)
+## Columns (keep as string constants)
 COL_DF_PATIENT_PATIENT = "phenopacket"
 COL_DF_PATIENT_ORPHACODE = "Disease"
 
-# Rare random walk output
+## Rare random walk output
 PATH_OUTPUT_FOLDER_RW = os.path.join(PATH_OUTPUT, "rarw")
 os.makedirs(PATH_OUTPUT_FOLDER_RW, exist_ok=True)
 
-# Compare results
+## Compare results
 PATH_OUTPUT_COMPARE_RSLT = os.path.join(PATH_OUTPUT, f"compare_rank_{CONFIG}")
 os.makedirs(PATH_OUTPUT_COMPARE_RSLT, exist_ok=True)
 PATH_OUTPUT_COMPARE_RSLT_PER_PATIENT = os.path.join(PATH_OUTPUT_COMPARE_RSLT, "metric_patient")
@@ -70,7 +71,7 @@ os.makedirs(PATH_OUTPUT_COMPARE_GLOBAL, exist_ok=True)
 PATH_OUTPUT_HM = os.path.join(PATH_OUTPUT, f"hm")
 os.makedirs(PATH_OUTPUT_HM, exist_ok=True)
 
-# Output product
+## Output product
 PATH_OUTPUT_PRODUCT = os.path.join(PATH_OUTPUT, "pd_orphanet")
 os.makedirs(PATH_OUTPUT_PRODUCT, exist_ok=True)
 PATH_OUTPUT_PRODUCT_CLASSIF = os.path.join(PATH_OUTPUT_PRODUCT, "Classifications")
@@ -106,7 +107,7 @@ PATH_OUTPUT_PRODUCT6_JSON =f"{PATH_OUTPUT_PRODUCT}/en_product6.json"
 PATH_OUTPUT_DF_PRODUCT6 =f"{PATH_OUTPUT_PRODUCT}/en_product6.xlsx"
 
 
-# Input product
+## Input product
 PATH_INPUT_PRODUCT = os.path.join(PATH_INPUT, "pd_orphanet")
 os.makedirs(PATH_INPUT_PRODUCT, exist_ok=True)
 

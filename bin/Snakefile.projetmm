@@ -19,7 +19,7 @@ params_RD_dict = rd_config["param_RD"]
 combine = ['funSimMax'] #["funSimAvg","BMA",'funSimMax','BUMS','rsd]
 sm_method =["resnik"] # "graphic",'rel','ic','lin','jc']
 weight_flag = "n"
-product4 = "productmai2024_all_vectors_withontologyX"
+product4 = "test"
 
 ## Generate all vectors
 n_weights = 5

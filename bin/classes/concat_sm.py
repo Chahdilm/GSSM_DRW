@@ -83,11 +83,12 @@ class ConcatSm():
                     logging.warning("[%s] failed to produce CDF: %s", key, e)
 
 
-
-    def concat_matrix(self,base_dir):
+    def concat_matrix(self,base_dir,pd4):
         """Pivot & concatenate MM score matrices under base_dir for the given vector_str."""
-        xlsx_files = glob.glob(f"{base_dir}/**/*.xlsx", recursive=True)
- 
+        xlsx = glob.glob(f"{base_dir}/**/*.xlsx", recursive=True)
+
+        xlsx_files = [p for p in xlsx if f"/{pd4}/" in p]
+
         rows = []
         for f in xlsx_files:
             if self.vector_str not in f:
